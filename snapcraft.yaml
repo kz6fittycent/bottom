@@ -7,17 +7,17 @@ description: |
   
   After installation, run the following commands so the program will run as intended:
 
-    - sudo snap connect bpytop:mount-observe
+    - sudo snap connect bottom:mount-observe
 
-    - sudo snap connect bpytop:network-control
+    - sudo snap connect bottom:network-control
 
-    - sudo snap connect bpytop:hardware-observe
+    - sudo snap connect bottom:hardware-observe
 
-    - sudo snap connect bpytop:system-observe
+    - sudo snap connect bottom:system-observe
 
-    - sudo snap connect bpytop:process-control
+    - sudo snap connect bottom:process-control
 
-    - sudo snap connect bpytop:physical-memory-observe
+    - sudo snap connect bottom:physical-memory-observe
     
   Check out the developer's site for more usage hints: https://github.com/ClementTsang/bottom#usage
   
