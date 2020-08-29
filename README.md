@@ -16,7 +16,6 @@ A snap for bottom
 - sudo snap connect bottom:hardware-observe
 - sudo snap connect bottom:system-observe
 - sudo snap connect bottom:process-control
-- sudo snap connect bottom:physical-memory-observe
 ```
   
 ### Check out the developer's site for more usage hints: https://github.com/ClementTsang/bottom#usage
