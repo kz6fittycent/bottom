@@ -1,0 +1,37 @@
+name: bottom
+adopt-info: bottom
+summary: A graphical process/system monitor with a customizable interface
+description: |
+  A cross-platform graphical process/system monitor with a customizable interface and a multitude of features. 
+  Supports Linux, macOS, and Windows. Inspired by both gtop and gotop.
+
+license: MIT
+
+base: core18
+grade: stable
+confinement: strict
+
+apps: 
+  bottom:
+    command: bottom
+    plugs:
+      - mount-observe
+      - network-control
+      - process-control
+      - system-observe
+      - hardware-observe
+      - network
+      
+parts:
+  bottom:
+    source: https://github.com/ClementTsang/bottom
+    source-type: git
+    plugin: rust
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
+      
+    build-packages:
+      - rustc
+      - cargo
+      
