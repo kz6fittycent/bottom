@@ -57,3 +57,4 @@ parts:
       - rustc
       - cargo
       - python3-toml
+      - tzdata
