@@ -34,7 +34,7 @@ architectures:
   
 apps: 
   bottom:
-    command: btm
+    command: bin/btm
     plugs:
       - mount-observe
       - network-control
