@@ -9,8 +9,6 @@ description: |
 
     - sudo snap connect bottom:mount-observe
 
-    - sudo snap connect bottom:network-control
-
     - sudo snap connect bottom:hardware-observe
 
     - sudo snap connect bottom:system-observe
