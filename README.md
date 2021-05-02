@@ -12,7 +12,6 @@ A snap for bottom
 ### After installation, run the following commands so the program will run as intended:
 ```
 - sudo snap connect bottom:mount-observe
-- sudo snap connect bottom:network-control
 - sudo snap connect bottom:hardware-observe
 - sudo snap connect bottom:system-observe
 - sudo snap connect bottom:process-control
