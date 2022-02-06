@@ -49,7 +49,7 @@ parts:
     plugin: rust
     override-pull: |
       snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
       
     build-packages:
       - rustc
