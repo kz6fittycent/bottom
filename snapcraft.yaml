@@ -30,10 +30,15 @@ architectures:
   - build-on: arm64
   - build-on: armhf
   - build-on: ppc64el
-  
+
+assumes:
+  - command-chain  
+
 apps: 
   bottom:
     command: bin/btm
+    command-chain: 
+      - bin/homeishome-launch      
     plugs:
       - mount-observe
       - network-control
@@ -56,3 +61,8 @@ parts:
       - cargo
       - python3-toml
       - tzdata
+ 
+  homeishome-launch:
+    plugin: nil
+    stage-snaps:
+      - homeishome-launch 
