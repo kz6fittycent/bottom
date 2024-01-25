@@ -51,7 +51,7 @@ parts:
   bottom:
     source: https://github.com/ClementTsang/bottom
     source-type: git
-    source-branch: release
+    source-tag: 0.9.6
     plugin: rust
     override-pull: |
       snapcraftctl pull
