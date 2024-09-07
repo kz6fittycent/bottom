@@ -20,25 +20,34 @@ description: |
   
 license: MIT
 
-base: core20
+base: core24
 grade: stable
 confinement: strict
 compression: lzo
+issues: https://github.com/kz6fittycent/bottom/issues
+source-code: https://github.com/ClementTsang/bottom
+contact: https://github.com/kz6fittycent/bottom
 
-architectures:
-  - build-on: amd64
-  - build-on: arm64
-  - build-on: armhf
-  - build-on: ppc64el
-
-assumes:
-  - command-chain  
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+  arm64:
+    build-on: [arm64]
+    build-for: [arm64]
+  armhf:
+    build-on: [armhf]
+    build-for: [armhf]
+  ppc64el:
+    build-on: [ppc64el]
+    build-for: [ppc64el]
+  s390x:
+    build-on: [s390x]
+    build-for: [s390x]
 
 apps: 
   bottom:
     command: bin/btm
-    command-chain: 
-      - bin/homeishome-launch      
     plugs:
       - mount-observe
       - network-control
@@ -51,19 +60,14 @@ parts:
   bottom:
     source: https://github.com/ClementTsang/bottom
     source-type: git
-    source-tag: 0.9.6
+    source-branch: release
     plugin: rust
     override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
+      craftctl default
+      craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)" 
       
     build-packages:
       - rustc
       - cargo
       - python3-toml
       - tzdata
- 
-  homeishome-launch:
-    plugin: nil
-    stage-snaps:
-      - homeishome-launch 
