@@ -60,7 +60,7 @@ parts:
   bottom:
     source: https://github.com/ClementTsang/bottom
     source-type: git
-    source-branch: release
+    source-tag: 0.11.2
     plugin: rust
     override-pull: |
       craftctl default
